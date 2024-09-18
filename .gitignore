@@ -1,6 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/venv,django,python,react,nextjs
 # Edit at https://www.toptal.com/developers/gitignore?templates=venv,django,python,react,nextjs
 backend/myvenv/
+node_modules/
 
 ### Django ###
 *.log
