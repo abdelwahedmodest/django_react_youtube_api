@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import  Login  from  "./Login"
+import { useEffect, useState } from "react";
+//import  Im  from  "./Im"
+import  Data  from  "./Data"
 
 function App() {
+  const  [mohamed,setmohamed]=useState(0)
+  const  [number,setnumber]=useState(1)
+ const plushandler=()=>{
+  setmohamed(mohamed + 1)
+ }
+ const minushandler=()=>{
+  setmohamed(mohamed - 1)
+ }
+ useEffect(()=>{
+  console.log("test")
+ },[number])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+   <button  onClick={plushandler}>+</button>
+   {mohamed}
+   <button  onClick={minushandler}>+</button>
+   <button  onClick={()=>{setnumber(number*2)}}>INCREMENT</button>
+    {number}
+    {/*<Im/>*/}
+
+<Login />
+<Data />
+  </>   
+    );
+  }
+
 
 export default App;
