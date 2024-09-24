@@ -1,31 +1,34 @@
 import  Login  from  "./Login"
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 //import  Im  from  "./Im"
 import  Data  from  "./Data"
+//import  {BrowserRouter,Routes,Route}  from  "react-router-dom"
 
 function App() {
-  const  [mohamed,setmohamed]=useState(0)
-  const  [number,setnumber]=useState(1)
- const plushandler=()=>{
+  //const  [mohamed,setmohamed]=useState(0)
+  //const  [number,setnumber]=useState("")
+/* const plushandler=()=>{
   setmohamed(mohamed + 1)
  }
  const minushandler=()=>{
   setmohamed(mohamed - 1)
- }
- useEffect(()=>{
-  console.log("test")
- },[number])
+ }*/
+
   return (
     <>
+  
+  <Login />
+   {/*
+   
    <button  onClick={plushandler}>+</button>
    {mohamed}
    <button  onClick={minushandler}>+</button>
    <button  onClick={()=>{setnumber(number*2)}}>INCREMENT</button>
     {number}
-    {/*<Im/>*/}
+    */}
 
-<Login />
 <Data />
+
   </>   
     );
   }
