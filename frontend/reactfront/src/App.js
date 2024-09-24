@@ -1,7 +1,7 @@
 import  Login  from  "./Login"
 //import { useEffect, useState } from "react";
 //import  Im  from  "./Im"
-import  Data  from  "./Data"
+import  SData  from  "./SData"
 //import  {BrowserRouter,Routes,Route}  from  "react-router-dom"
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
     {number}
     */}
 
-<Data />
+<SData />
 
   </>   
     );
