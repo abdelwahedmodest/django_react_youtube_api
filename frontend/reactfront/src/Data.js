@@ -1,26 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
 const Data = () => {
-    const  mydata[];
+    const [data, setData] = useState(null); // État pour stocker les données
+
     useEffect(() => {
-        console.log("script  start...")
-        // Retrieve the token from localStorage (or sessionStorage)
-       const token = localStorage.getItem('access_token'); // Replace 'token' with the actual key you're using
-       //console.log(token);
-       //console.log("first_test");
-       // Check if the token is available
-       if (token) {
-            //console.log(token);
-            //console.log("second_test");
-            
-   fetch("http://localhost:8000/Ab/", {
+        console.log("script start...");
+        const token = localStorage.getItem('access_token'); // Récupérer le token depuis localStorage
+
+        if (token) {
+            fetch("http://localhost:8000/Ab/", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+                    'Authorization': `Bearer ${token}` // Inclure le token dans le header Authorization
                 }
-            }) 
-            
+            })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -28,10 +22,8 @@ const Data = () => {
                 return response.json();
             })
             .then(json => {
-                mydata=json;
-                console.log(mydata);
-                console.log(mydata[0].description);
-            
+                setData(json); // Stocker les données JSON dans l'état
+                console.log(json);
             })
             .catch(error => console.error('There was an error!', error));
         } else {
@@ -41,10 +33,16 @@ const Data = () => {
 
     return (
         <div>
-           {/*mydata[0].title*/}
-            {/* Render your data or any UI elements here */}
+            <h1>Data from API</h1>
+            {/* Afficher les données si elles existent */}
+            {data ? (
+                <pre>{JSON.stringify(data, null, 2)}</pre>
+            ) : (
+                <p>Loading...</p>
+            )}
         </div>
     );
 }
 
 export default Data;
+
