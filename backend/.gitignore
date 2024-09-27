@@ -1,7 +1,7 @@
 myvenv/
 # Created by https://www.toptal.com/developers/gitignore/api/django,venv,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,venv,react
-
+backend/google_oauth.json
 ### Django ###
 *.log
 *.pot
