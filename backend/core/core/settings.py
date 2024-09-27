@@ -1,6 +1,10 @@
 from pathlib import Path
 from datetime import timedelta
+<<<<<<< HEAD
 
+=======
+import  os
+>>>>>>> 04d29124fca7847bb2611299c809f17960d29408
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,8 +34,27 @@ INSTALLED_APPS = [
     'api',
     'contactus',
     'rest_framework.authtoken',
+<<<<<<< HEAD
 ]
 
+=======
+     # autres apps...
+   # 'django.contrib.sites',  # Nécessaire pour django-allauth
+    #'allauth',
+    #'allauth.account',
+    #'allauth.socialaccount',
+    #'allauth.socialaccount.providers.google',  # Pour Google
+    #'allauth.socialaccount.providers.facebook',  # Pour Facebook
+    # d'autres providers si nécessaire
+]
+
+#SITE_ID = 1
+
+#AUTHENTICATION_BACKENDS = (
+   # 'django.contrib.auth.backends.ModelBackend',  # Backend par défaut
+  #  'allauth.account.auth_backends.AuthenticationBackend',
+#)
+>>>>>>> 04d29124fca7847bb2611299c809f17960d29408
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Doit être en haut
@@ -136,4 +159,11 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
+<<<<<<< HEAD
 }
+=======
+}
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+>>>>>>> 04d29124fca7847bb2611299c809f17960d29408

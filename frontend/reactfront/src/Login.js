@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 04d29124fca7847bb2611299c809f17960d29408
 const Login = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
 
@@ -14,9 +18,20 @@ const Login = () => {
 	const data = await response.json();
 
 	if (response.ok) {
+<<<<<<< HEAD
   	// Store the token in localStorage or sessionStorage
   	localStorage.setItem('access_token', data.access);
   	localStorage.setItem('refresh_token', data.refresh);
+=======
+	
+		console.log(data.access);
+  	// Store the token in localStorage or sessionStorage
+  	localStorage.setItem('access_token', data.access);
+  	localStorage.setItem('refresh_token', data.refresh);
+	 
+		
+	  
+>>>>>>> 04d29124fca7847bb2611299c809f17960d29408
 	} else {
   	console.log('Login failed:', data);
 	}
@@ -35,6 +50,10 @@ const Login = () => {
     	onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
   	/>
   	<button onClick={login}>Login</button>
+<<<<<<< HEAD
+=======
+	  
+>>>>>>> 04d29124fca7847bb2611299c809f17960d29408
 	</div>
   );
 };
