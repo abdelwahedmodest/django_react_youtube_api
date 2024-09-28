@@ -28,24 +28,69 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     'api',
+    'django.contrib.sites', 
     'contactus',
     'rest_framework.authtoken',
      # autres apps...
-   # 'django.contrib.sites',  # Nécessaire pour django-allauth
-    #'allauth',
-    #'allauth.account',
-    #'allauth.socialaccount',
-    #'allauth.socialaccount.providers.google',  # Pour Google
-    #'allauth.socialaccount.providers.facebook',  # Pour Facebook
+    # Nécessaire pour django-allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',  # Pour Google
+    'allauth.socialaccount.providers.facebook',  # Pour Facebook
+     'allauth.socialaccount.providers.instagram',
+    #'allauth.socialaccount.providers.youtube',
     # d'autres providers si nécessaire
 ]
 
-#SITE_ID = 1
+SITE_ID = 1
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+        'APP': {
+            'client_id': '<your-client-id>',
+            'secret': '<your-client-secret>',
+            'key': ''
+        }
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile'],
+        'FIELDS': ['id', 'email', 'name', 'first_name', 'last_name'],
+        'VERSION': 'v10.0',
+        'APP': {
+            'client_id': '<your-client-id>',
+            'secret': '<your-client-secret>',
+            'key': ''
+        }
+    },
+    # Ajoutez d'autres providers ici
+    'instagram': {
+        'SCOPE': ['user_profile', 'user_media'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+        'APP': {
+            'client_id': '1508812006668342',
+            'secret': '879616b847ae58cd08826b8fc2a5f685',
+            'key': ''
+        }
+    },
+     # Ajoutez d'autres providers ici
+      #'youtube': {
+        #'SCOPE': ['https://www.googleapis.com/auth/youtube.readonly'],
+        #'AUTH_PARAMS': {'access_type': 'online'},
+       # 'APP': {
+            #'client_id': '480925529494-q6h29j6ua3u5rtdi26hhd4hoh18v5mu7.apps.googleusercontent.com',
+            #'secret': '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',
+            #'key': ''
+       # }
+   # }
+}
 
-#AUTHENTICATION_BACKENDS = (
-   # 'django.contrib.auth.backends.ModelBackend',  # Backend par défaut
-  #  'allauth.account.auth_backends.AuthenticationBackend',
-#)
+AUTHENTICATION_BACKENDS = (
+   'django.contrib.auth.backends.ModelBackend',  # Backend par défaut
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Doit être en haut
@@ -56,6 +101,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 
@@ -154,3 +200,19 @@ SIMPLE_JWT = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Authentification par email
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+# Connexion automatique après inscription
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+
+# Redirections après connexion et déconnexion
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+# Activer les inscriptions
+ACCOUNT_ALLOW_REGISTRATION = True
