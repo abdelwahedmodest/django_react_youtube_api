@@ -70,8 +70,10 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': ['user_profile', 'user_media'],
         'AUTH_PARAMS': {'access_type': 'online'},
         'APP': {
-            'client_id': '1508812006668342',
-            'secret': '879616b847ae58cd08826b8fc2a5f685',
+
+            'client_id': '',
+            'secret': '',
+
             'key': ''
         }
     },
@@ -80,8 +82,10 @@ SOCIALACCOUNT_PROVIDERS = {
         #'SCOPE': ['https://www.googleapis.com/auth/youtube.readonly'],
         #'AUTH_PARAMS': {'access_type': 'online'},
        # 'APP': {
-            #'client_id': '480925529494-q6h29j6ua3u5rtdi26hhd4hoh18v5mu7.apps.googleusercontent.com',
-            #'secret': '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',
+
+            #'client_id': '',
+            #'secret': '',
+
             #'key': ''
        # }
    # }
