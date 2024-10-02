@@ -1,7 +1,8 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import MediaUpload
-
+from allauth.socialaccount.providers.google.provider import GoogleProvider
+from allauth.socialaccount.providers.oauth2.client import OAuth2Error
 @csrf_exempt
 def upload_media(request):
     if request.method == 'POST':
@@ -27,10 +28,8 @@ def upload_media(request):
     
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
-#from allauth.socialaccount.providers.google.provider import GoogleProvider
-#from allauth.socialaccount.providers.oauth2.client import OAuth2Error
 
-#def social_login(request):
+
+def social_login(request):
     # Recevoir le token et authentifier
-    #pass
-
+    pass

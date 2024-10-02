@@ -70,8 +70,10 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': ['user_profile', 'user_media'],
         'AUTH_PARAMS': {'access_type': 'online'},
         'APP': {
+
             'client_id': '',
             'secret': '',
+
             'key': ''
         }
     },
@@ -80,8 +82,10 @@ SOCIALACCOUNT_PROVIDERS = {
         #'SCOPE': ['https://www.googleapis.com/auth/youtube.readonly'],
         #'AUTH_PARAMS': {'access_type': 'online'},
        # 'APP': {
+
             #'client_id': '',
             #'secret': '',
+
             #'key': ''
        # }
    # }

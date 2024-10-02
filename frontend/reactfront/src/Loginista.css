@@ -1,0 +1,21 @@
+/* styles.css */
+.login-container {
+    background-color: #f9f9f9; /* Light background */
+}
+
+.login-card {
+    background-color: white; /* Card background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 400px; /* Max width */
+    width: 100%; /* Responsive */
+    padding: 30px; /* Inner spacing */
+}
+
+button {
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #c72858; /* Darker shade on hover */
+}
