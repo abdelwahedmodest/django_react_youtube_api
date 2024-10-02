@@ -26,3 +26,10 @@ sqlparse==0.5.1
 tzdata==2024.1
 uritemplate==4.1.1
 urllib3==2.2.3
+
+*instagram
+ID_1508812006668342
+secret_app_879616b847ae58cd08826b8fc2a5f685
+*youtube
+client_id_480925529494-q6h29j6ua3u5rtdi26hhd4hoh18v5mu7.apps.googleusercontent.com
+code_secret_GOCSPX-hlDFRZDgHvzP97HDYYEjMBLkGOYf
