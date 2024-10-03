@@ -1,32 +1,25 @@
-#from django.shortcuts import render
-
-# Create your views here.
-#@api_view(['POST'])
-#def upload_video(request):
-    #video = request.FILES['video']
-    #title = request.data['title']
-    #description = request.data['description']
-    # Gérer la sauvegarde de la vidéo et l'intégration avec l'API YouTube ou autre
-    #return Response({'status': 'success'})
-
-from api.models import SocialPlatform,UserProfile,Video
-from api.serializers import  UserProfileSerializer,SocialPlatformSerializer,VideoSerializer
-from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+from api.models import Video
+from api.serializers import VideoSerializer
+from rest_framework.permissions import IsAuthenticated
 
 class VideoList(APIView):
     """
-    List all snippets, or create a new snippet.
+    Permet à un utilisateur authentifié de télécharger une vidéo et de la récupérer.
     """
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, format=None):
-        mesvideos = Video.objects.all()
-        serializer = VideoSerializer(mesvideos, many=True)
+        # Récupérer toutes les vidéos de l'utilisateur connecté
+        videos = Video.objects.filter(user=request.user)
+        serializer = VideoSerializer(videos, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
+        # Ajouter l'utilisateur à la requête avant de valider et sauvegarder
+        request.data['user'] = request.user.id
         serializer = VideoSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

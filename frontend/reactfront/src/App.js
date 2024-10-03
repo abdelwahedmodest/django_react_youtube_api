@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Login from "./Login";
 import InstagramLogin from './Logininsta';
 import SData from "./SData";
-import UploadForm from "./Formreact";
+//import UploadForm from "./Components/UploadForm";
 import Home from "./Home";
+import UploadVideoForm from './Components/ApiForm';
 
 function App() {
   return (
@@ -41,7 +42,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/data" element={<SData />} />
-        <Route path="/formdata" element={<UploadForm />} />
+        <Route path="/formdata" element={<UploadVideoForm />} />
         <Route path="/insta" element={<InstagramLogin />} />
       </Routes>
     </BrowserRouter>
