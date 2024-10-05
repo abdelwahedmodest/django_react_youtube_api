@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './UploadVideoForm.css'; // Importing CSS
 
 const UploadVideoForm = () => {
   const [video, setVideo] = useState(null);
@@ -20,14 +21,14 @@ const UploadVideoForm = () => {
     formData.append("video_file", video);
     formData.append("title", title);
     formData.append("description", description);
-    formData.append("keywords", JSON.stringify(keywords.split(","))); // Convertir en tableau JSON
-    formData.append("hashtags", JSON.stringify(hashtags.split(","))); // Convertir en tableau JSON
+    formData.append("keywords", JSON.stringify(keywords.split(",")));
+    formData.append("hashtags", JSON.stringify(hashtags.split(",")));
 
     try {
       const res = await axios.post("http://localhost:8000/api/videos/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,  // Inclure le token JWT pour l'authentification
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
       setResponse("Video uploaded successfully!");
@@ -38,47 +39,54 @@ const UploadVideoForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className="container">
+      <div className="content-manager">
+        <img src="/logo.png" alt="Content Manager" className="logo" />
+      </div>
+      <form onSubmit={handleSubmit} className="form-container">
+        <div className="form-group">
           <label>Title:</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            className="input-box"
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Description:</label>
           <input
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            className="input-box"
           />
         </div>
-        <div>
-          <label>Keywords (comma separated):</label>
+        <div className="form-group">
+          <label>Keywords:</label>
           <input
             type="text"
             value={keywords}
             onChange={(e) => setKeywords(e.target.value)}
+            className="input-box"
           />
         </div>
-        <div>
-          <label>Hashtags (comma separated):</label>
+        <div className="form-group">
+          <label>Hashtags:</label>
           <input
             type="text"
             value={hashtags}
             onChange={(e) => setHashtags(e.target.value)}
+            className="input-box"
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Video:</label>
-          <input type="file" onChange={handleFileChange} />
+          <input type="file" onChange={handleFileChange} className="input-file" />
         </div>
-        <button type="submit">Upload Video</button>
+        <button type="submit" className="submit-button">Send</button>
       </form>
-      {response && <p>{response}</p>}
+      {response && <p className="response-message">{response}</p>}
     </div>
   );
 };

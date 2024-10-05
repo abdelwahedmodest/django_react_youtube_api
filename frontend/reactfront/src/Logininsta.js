@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Ensure you have react-router-dom installed
 import  "./Loginista.css"
-
+import AuthIcons from './Auth';
 const InstagramLogin = () => {
     const navigate = useNavigate();
 
@@ -21,6 +21,7 @@ const InstagramLogin = () => {
                     Login with Instagram
                 </button>
             </div>
+            <AuthIcons />
         </div>
     );
 };

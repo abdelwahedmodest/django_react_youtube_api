@@ -1,0 +1,68 @@
+/* ContentManagerForm.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #28403C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    }
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .form-wrapper {
+    background-color: #2D4E48;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    }
+    .logo img {
+    width: 150px;
+    }
+    .form-content {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    color: #fff;
+    width: 300px;
+    }
+    label {
+    font-size: 1.2em;
+    }
+    input[type="text"],
+    textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #E9E7DC;
+    font-size: 1em;
+    }
+    textarea {
+    resize: none;
+    }
+    input[type="file"] {
+    background-color: #E9E7DC;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    }
+    .send-btn {
+    background-color: #9C4A30;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    }
+    .send-btn:hover {
+    background-color: #8B3F28;
+    }

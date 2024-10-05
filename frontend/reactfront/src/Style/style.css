@@ -1,0 +1,44 @@
+/* style.css */
+
+.navbar {
+    background-color: #f8f9fa; /* Couleur de fond de la barre de navigation */
+  }
+  
+  .navbar-brand {
+    font-size: 24px; /* Taille de la police du logo */
+    font-weight: bold; /* Gras pour le logo */
+  }
+  
+  .nav-link {
+    color: #007bff; /* Couleur des liens */
+    font-weight: 500; /* Poids de la police des liens */
+  }
+  
+  .nav-link:hover {
+    color: #0056b3; /* Couleur au survol des liens */
+  }
+  
+  .btn-outline-primary {
+    border-color: #007bff; /* Couleur de la bordure du bouton Login */
+    color: #007bff; /* Couleur du texte du bouton Login */
+  }
+  
+  .btn-outline-secondary {
+    border-color: #6c757d; /* Couleur de la bordure du bouton Register */
+    color: #6c757d; /* Couleur du texte du bouton Register */
+  }
+  
+  .btn:hover {
+    opacity: 0.8; /* Effet d'opacité au survol des boutons */
+  }
+  
+  /* Styles pour s'assurer que les boutons sont correctement espacés */
+  .ml-auto {
+    margin-left: auto; /* Pousse les éléments vers la droite */
+  }
+  
+  .mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  

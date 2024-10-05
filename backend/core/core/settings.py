@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',  # Pour Google
     'allauth.socialaccount.providers.facebook',  # Pour Facebook
-     'allauth.socialaccount.providers.instagram',
+    'allauth.socialaccount.providers.instagram',
     #'allauth.socialaccount.providers.youtube',
     # d'autres providers si nécessaire
 ]
@@ -122,6 +122,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },

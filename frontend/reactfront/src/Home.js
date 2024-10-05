@@ -1,42 +1,43 @@
-// Home.js
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import React, { useState, useEffect } from 'react';
+import './Homepage.css'; // Import the CSS file
+//import AuthIcons from './Auth'; // Assurez-vous de bien importer votre composant
 
-const Home = () => {
+const Homepage = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false); // State for login/logout
+
+    useEffect(() => {
+        // Check if the user is authenticated (based on token in localStorage)
+        const token = localStorage.getItem('access_token');
+        if (token) {
+            setIsAuthenticated(true); // User is logged in
+        }
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem('access_token'); // Remove token from localStorage
+        setIsAuthenticated(false); // Update state to reflect logout
+    };
+
     return (
-        <div style={{ padding: '20px', textAlign: 'center' }}>
-            <div style={{ marginTop: '20px' }}>
-                <Link to="/login">
-                    <button style={buttonStyle}>Login</button>
-                </Link>
-                <Link to="/data">
-                    <button style={buttonStyle}>View Data</button>
-                </Link>
-                <Link to="/formdata">
-                    <button style={buttonStyle}>Upload Form</button>
-                </Link>
-                <Link to="/insta">
-                    <button style={buttonStyle}>Login with Instagram</button>
-                </Link>
+        <div className="homepage-container">
+             <div className="home-container">
+     
+    </div>
+            <header className="homepage-header">
+                <h1>Welcome to the App</h1>
+                <p>Your gateway to amazing content and videos</p>
+            </header>
+            
+            <div className="button-container">
+                <a href="/register" className="btn btn-primary">Register</a>
+                {isAuthenticated ? (
+                    <button onClick={handleLogout} className="btn btn-secondary">Logout</button>
+                ) : (
+                    <a href="/login" className="btn btn-secondary">Login</a>
+                )}
             </div>
         </div>
     );
-};
+}
 
-// Optional: Define styles for buttons
-const buttonStyle = {
-    padding: '10px 20px',
-    borderRadius: '5px',
-    border: 'none',
-    backgroundColor: '#E1306C',
-    color: 'white',
-    cursor: 'pointer',
-    fontSize: '16px',
-    margin: '10px',
-    transition: 'background-color 0.3s ease',
-};
-
-export default Home;
-
-
-
+export default Homepage;
