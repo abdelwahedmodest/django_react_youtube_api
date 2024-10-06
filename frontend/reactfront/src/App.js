@@ -9,6 +9,7 @@ import UploadVideoForm from './Components/ApiForm';
 import "./Style/style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import VideoUploadForm from './Components/YoutubeForm';
+import SchedulePage from './Components/SchedulePage';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             <li className="nav-item">
               <Link className="nav-link" to="/youtube">Youtube</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/calender">calender</Link>
+            </li>
           </ul>
           {/* Liens de connexion et d'inscription à droite */}
           <div className="ml-auto">
@@ -50,7 +54,7 @@ function App() {
         <Route path="/data" element={<SData />} />
         <Route path="/formdata" element={<UploadVideoForm />} />  
         <Route path="/youtube" element={<VideoUploadForm/>} />  
-        
+         <Route path="/calender" element={<SchedulePage/>} /> 
        {/*<Route path="/insta" element={<InstagramLogin />} />*/} 
       </Routes>
     </BrowserRouter>

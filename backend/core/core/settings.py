@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #'allauth.socialaccount.providers.youtube',
     # d'autres providers si nécessaire
     'youtubeapi',
+    'calender',
 ]
 
 SITE_ID = 1
