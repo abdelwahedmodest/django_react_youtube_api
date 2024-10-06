@@ -5,11 +5,15 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faGithub, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'; // Importez les icônes souhaitées
 import './AuthIcons.css'; // Importez votre fichier CSS
+import  {useNavigate}   from  'react-router-dom'
 
 const AuthIcons = () => {
+
+  
   const handleAuth = (provider) => {
     console.log(`Authenticating with ${provider}`);
     // Ajoutez la logique d'authentification ici
+    window.location.href='http://127.0.0.1:8000/accounts/facebook/login/';
   };
 
   return (

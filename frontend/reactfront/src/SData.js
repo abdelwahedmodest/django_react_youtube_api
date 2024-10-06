@@ -9,7 +9,7 @@ const SData = () => {
         const token = localStorage.getItem('access_token'); // Retrieve token from localStorage
 
         if (token) {
-            fetch("http://localhost:8000/api/videos", {
+            fetch("http://localhost:8000/api/upload/", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

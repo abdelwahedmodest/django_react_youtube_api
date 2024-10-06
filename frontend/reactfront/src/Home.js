@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Homepage.css'; // Import the CSS file
 //import AuthIcons from './Auth'; // Assurez-vous de bien importer votre composant
+import AuthIcons from './Auth';
 
 const Homepage = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false); // State for login/logout
@@ -36,6 +37,7 @@ const Homepage = () => {
                     <a href="/login" className="btn btn-secondary">Login</a>
                 )}
             </div>
+            <AuthIcons />
         </div>
     );
 }

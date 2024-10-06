@@ -30,6 +30,4 @@ def upload_media(request):
 
 
 
-def social_login(request):
-    # Recevoir le token et authentifier
-    pass
+

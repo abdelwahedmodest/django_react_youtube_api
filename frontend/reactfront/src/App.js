@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       {/* Navbar Bootstrap */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand" to="/">Logo</Link>
+        <Link className="navbar-brand" to="/"><img  src="images/logo.jpg"  alt="wait  for  logo"/></Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -29,9 +29,7 @@ function App() {
             <li className="nav-item">
               <Link className="nav-link" to="/formdata">Upload</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/insta">Social</Link>
-            </li>
+          
           </ul>
           {/* Liens de connexion et d'inscription à droite */}
           <div className="ml-auto">
@@ -48,7 +46,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/data" element={<SData />} />
         <Route path="/formdata" element={<UploadVideoForm />} />  
-        <Route path="/insta" element={<InstagramLogin />} />
+       {/*<Route path="/insta" element={<InstagramLogin />} />*/} 
       </Routes>
     </BrowserRouter>
   );
