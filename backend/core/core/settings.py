@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.instagram',
     #'allauth.socialaccount.providers.youtube',
     # d'autres providers si nécessaire
+    'youtubeapi',
 ]
 
 SITE_ID = 1

@@ -25,6 +25,7 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include('contactus.urls')),
     path('accounts/', include('allauth.urls')),
+    path('', include('youtubeapi.urls')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
