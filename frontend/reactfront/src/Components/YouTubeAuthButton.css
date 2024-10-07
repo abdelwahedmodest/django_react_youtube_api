@@ -1,0 +1,32 @@
+/* YouTubeAuthButton.css */
+
+/* Conteneur pour le bouton */
+.auth-button-container {
+    display: flex;
+    justify-content: center;  /* Centrer le bouton horizontalement */
+    align-items: center;      /* Centrer le bouton verticalement */
+    margin: 20px 0;          /* Marge autour du conteneur */
+}
+
+/* Style du bouton */
+.btn-primary {
+    background-color: #FF0000; /* Couleur rouge YouTube */
+    color: #FFFFFF;             /* Couleur du texte en blanc */
+    border: none;               /* Pas de bordure */
+    padding: 12px 24px;         /* Padding pour le bouton */
+    border-radius: 5px;         /* Coins arrondis */
+    font-size: 16px;            /* Taille de police */
+    cursor: pointer;            /* Curseur pointer au survol */
+    transition: background-color 0.3s; /* Animation de transition */
+}
+
+/* Effet de survol du bouton */
+.btn-primary:hover {
+    background-color: #CC0000; /* Couleur plus foncée au survol */
+}
+
+/* Style pour le texte du bouton */
+.btn-primary:focus {
+    outline: none;              /* Pas de contour au focus */
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Ombre au focus */
+}

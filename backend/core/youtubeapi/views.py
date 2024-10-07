@@ -32,9 +32,9 @@ def upload_video_to_youtube(request):
 
     body = {
         'snippet': {
-            'title': 'Titre de la vidéo',
+            'title': 'smart video',
             'description': 'Description de la vidéo',
-            'tags': ['mot-clé1', 'mot-clé2'],
+            'tags': ['test', 'start'],
             'categoryId': '22'  # Par exemple, 22 pour les "People & Blogs"
         },
         'status': {
@@ -42,7 +42,7 @@ def upload_video_to_youtube(request):
         }
     }
     
-    with open('chemin_vers_la_video.mp4', 'rb') as video_file:
+    with open('/programmer.mp4', 'rb') as video_file:
         request = youtube.videos().insert(
             part='snippet,status',
             body=body,

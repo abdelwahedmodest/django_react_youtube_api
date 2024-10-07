@@ -26,7 +26,9 @@ urlpatterns = [
     path('', include('contactus.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('youtubeapi.urls')),
-     path('', include('calender.urls')),
+    path('', include('calender.urls')),
+    path('', include('facegraphapi.urls')),
+
      
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

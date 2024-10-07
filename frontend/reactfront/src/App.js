@@ -10,6 +10,11 @@ import "./Style/style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import VideoUploadForm from './Components/YoutubeForm';
 import SchedulePage from './Components/SchedulePage';
+import YouTubeAuthButton from './Components/YouTubeAuthButton';
+
+
+
+
 
 function App() {
   return (
@@ -37,6 +42,9 @@ function App() {
             <li className="nav-item">
               <Link className="nav-link" to="/calender">calender</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/authyoutube">authyoutube</Link>
+            </li>
           </ul>
           {/* Liens de connexion et d'inscription à droite */}
           <div className="ml-auto">
@@ -55,6 +63,8 @@ function App() {
         <Route path="/formdata" element={<UploadVideoForm />} />  
         <Route path="/youtube" element={<VideoUploadForm/>} />  
          <Route path="/calender" element={<SchedulePage/>} /> 
+        
+         <Route path="/authyoutube" element={<YouTubeAuthButton />} /> 
        {/*<Route path="/insta" element={<InstagramLogin />} />*/} 
       </Routes>
     </BrowserRouter>

@@ -30,7 +30,7 @@ const UploadForm = () => {
         data.append('image', formData.image); // Image file
 
         // Send the formData to the backend (assuming API endpoint is set up)
-        const response = await fetch('http://localhost:8000/api/upload', {
+        const response = await fetch('https://localhost:8000/api/upload', {
             method: 'POST',
             body: data,
         });

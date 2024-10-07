@@ -23,7 +23,7 @@ const VideoUploadForm = () => {
         formData.append('keywords', keywords);
         formData.append('hashtags', hashtags);
 
-        axios.post('/api/upload-video', formData)
+        axios.post('https://localhost:8000/youtube/upload/', formData)
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
     };

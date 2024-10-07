@@ -33,6 +33,11 @@ const SchedulePage = () => {
             	{schedule.map((item, index) => (
                 	<li key={index}>
                     	{item.hour}: {item.task}
+						
+          <input
+            type="text"
+           />
+        
                 	</li>
             	))}
         	</ul>

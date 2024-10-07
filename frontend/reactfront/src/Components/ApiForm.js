@@ -25,7 +25,7 @@ const UploadVideoForm = () => {
     formData.append("hashtags", JSON.stringify(hashtags.split(",")));
 
     try {
-      const res = await axios.post("http://localhost:8000/api/upload/", formData, {
+      const res = await axios.post("https://localhost:8000/api/upload/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
