@@ -1,10 +1,11 @@
 from pathlib import Path
 from datetime import timedelta
 import  os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sites', 
     'contactus',
     'rest_framework.authtoken',
+     'django_extensions',
      # autres apps...
     # Nécessaire pour django-allauth
     'allauth',
@@ -41,6 +43,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.instagram',
     #'allauth.socialaccount.providers.youtube',
     # d'autres providers si nécessaire
+    'youtubeapi',
+    'calender',
+    'facegraphapi',
 ]
 
 SITE_ID = 1
@@ -60,8 +65,8 @@ SOCIALACCOUNT_PROVIDERS = {
         'FIELDS': ['id', 'email', 'name', 'first_name', 'last_name'],
         'VERSION': 'v10.0',
         'APP': {
-            'client_id': '<your-client-id>',
-            'secret': '<your-client-secret>',
+            'client_id': config('FACEBOOK_APP_ID'),
+            'secret': config('FACEBOOK_APP_SECRET'),
             'key': ''
         }
     },
@@ -114,7 +119,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -177,7 +182,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static/')
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
