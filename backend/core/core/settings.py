@@ -46,16 +46,20 @@ INSTALLED_APPS = [
     'youtubeapi',
     'calender',
     'facegraphapi',
+   'candidat',
+    'user',
+   
 ]
 
 SITE_ID = 1
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': ['profile', 'email'],
-        'AUTH_PARAMS': {'access_type': 'online'},
+        'AUTH_PARAMS': {'access_type': 'offline'},
+        'OAUTH_PKCE_ENABLED': True,
         'APP': {
-            'client_id': '<your-client-id>',
-            'secret': '<your-client-secret>',
+            'client_id': config('GOOGLE_APP_ID'),
+            'secret': config('GOOGLE_APP_SECRET'),
             'key': ''
         }
     },
@@ -70,30 +74,25 @@ SOCIALACCOUNT_PROVIDERS = {
             'key': ''
         }
     },
-    # Ajoutez d'autres providers ici
-    'instagram': {
-        'SCOPE': ['user_profile', 'user_media'],
-        'AUTH_PARAMS': {'access_type': 'online'},
-        'APP': {
-
-            'client_id': '',
-            'secret': '',
-
-            'key': ''
-        }
-    },
-     # Ajoutez d'autres providers ici
-      #'youtube': {
-        #'SCOPE': ['https://www.googleapis.com/auth/youtube.readonly'],
-        #'AUTH_PARAMS': {'access_type': 'online'},
-       # 'APP': {
-
-            #'client_id': '',
-            #'secret': '',
-
-            #'key': ''
-       # }
-   # }
+    #'instagram': {
+    #    'SCOPE': ['user_profile', 'user_media'],
+    #    'AUTH_PARAMS': {'access_type': 'online'},
+    #    'APP': {
+    #        'client_id': config('INSTAGRAM_APP_ID'),
+    #        'secret': config('INSTAGRAM_APP_SECRET'),
+    #        'key': ''
+    #    }
+    #},
+    # Uncomment and configure if you want to use YouTube OAuth
+     'youtube': {
+         'SCOPE': ['https://www.googleapis.com/auth/youtube.readonly'],
+         'AUTH_PARAMS': {'access_type': 'online'},
+         'APP': {
+             'client_id': config('YOUTUBE_APP_ID'),
+             'secret': config('YOUTUBE_APP_SECRET'),
+             'key': ''
+         }
+     }
 }
 
 AUTHENTICATION_BACKENDS = (
@@ -228,3 +227,11 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
 # Activer les inscriptions
 ACCOUNT_ALLOW_REGISTRATION = True
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'your_smtp_server'  # e.g., 'smtp.gmail.com' for Gmail
+EMAIL_PORT = 587  # Common SMTP port for TLS
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'abdelwahedmodest@gmail.com'
+EMAIL_HOST_PASSWORD = '1111CASABLANCA'

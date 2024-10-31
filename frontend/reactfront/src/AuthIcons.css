@@ -1,0 +1,24 @@
+/* AuthIcons.css */
+
+.auth-icons-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .auth-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les icônes */
+  }
+  
+  .auth-icon {
+    font-size: 40px; /* Taille des icônes */
+    color: #007bff; /* Couleur par défaut, ajustez selon le style souhaité */
+    cursor: pointer; /* Indique que c'est cliquable */
+    transition: color 0.3s; /* Transition pour un effet au survol */
+  }
+  
+  .auth-icon:hover {
+    color: #0056b3; /* Couleur au survol, ajustez selon le style */
+  }
+  

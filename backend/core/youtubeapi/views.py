@@ -60,7 +60,7 @@ def oauth2callback(request):
     flow = Flow.from_client_secrets_file(
         'client_secret.json',
         scopes=['https://www.googleapis.com/auth/youtube.upload'],
-        redirect_uri='http://localhost:8000/oauth2callback'
+        redirect_uri='https://localhost:8000/oauth2callback'
     )
     authorization_response = request.build_absolute_uri()
     flow.fetch_token(authorization_response=authorization_response)

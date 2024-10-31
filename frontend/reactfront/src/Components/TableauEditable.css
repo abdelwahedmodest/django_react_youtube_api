@@ -1,0 +1,56 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fffff0; /* Blanc cassé */
+  }
+  
+  .custom-table {
+    width: 80%;
+    border-collapse: collapse;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border: 2px solid white; /* Pour les lignes blanches entre les cellules */
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .custom-table th {
+    background-color: #b3ff66; /* Vert clair */
+    color: black;
+    font-size: 1.5em;
+  }
+  
+  .yellow-cell {
+    background-color: #ffd34d; /* Jaune */
+  }
+  
+  .cyan-cell {
+    background-color: #4dd2ff; /* Cyan */
+  }
+  
+  .gradient-cell {
+    background: linear-gradient(90deg, rgba(255, 238, 174, 1) 0%, rgba(255, 174, 238, 1) 50%, rgba(238, 174, 255, 1) 100%);
+  }
+  
+  .editable-cell {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    background: transparent;
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    color: black;
+  }
+  
+  /* Modifier le style des champs de saisie pour les rendre visibles uniquement lors du focus */
+  .editable-cell:focus {
+    outline: none;
+    border: 2px solid #000; /* Bordure noire lors de la saisie */
+  }
+  

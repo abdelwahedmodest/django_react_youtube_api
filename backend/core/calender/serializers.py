@@ -1,10 +1,16 @@
+#from rest_framework import serializers
+#from .models import UserActivity
+
+#class UserActivitySerializer(serializers.ModelSerializer):
+#	class Meta:
+#		model = UserActivity
+#		fields = '__all__'
+
 from rest_framework import serializers
-from .models import UserActivity
+from .models import Action
 
-class UserActivitySerializer(serializers.ModelSerializer):
+class ActionSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = UserActivity
+		model = Action
 		fields = '__all__'
-
-
 
